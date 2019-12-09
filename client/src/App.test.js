@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
 import App from './App';
 
-it('renders without crashing', () => {});
+it('renders the expected content', () => {});
