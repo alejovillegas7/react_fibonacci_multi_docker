@@ -20,5 +20,5 @@ after_success:
     - docker push alejovillegas7/multi-client
     - docker push alejovillegas7/multi-nginx
     - docker push alejovillegas7/multi-server
-    - docker push alejovillegas7/multi-worker 
+    - docker push alejovillegas7/multi-worker
 
