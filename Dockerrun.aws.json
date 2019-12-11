@@ -1,0 +1,40 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "alejovillegas7/multi-client",
+            "hostname": "client",
+            "essential": false,
+            "memory": 128
+        },
+        {
+            "name": "server",
+            "image": "alejovillegas7/multi-server",
+            "hostname": "api",
+            "eseential": false,
+            "memory": 128
+        },
+        {
+            "name": "worker",
+            "image": "alejovillegas7/multi-worker",
+            "hostname": "worker", 
+            "eseential": false,
+            "memory": 128
+        },
+        {
+            "name": "nginx",
+            "image": "alejovillegas7/multi-nginx",
+            "hostname": "nginx", 
+            "eseential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["client", "server"],
+            "memory": 128
+        }
+    ]
+}
